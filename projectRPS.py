@@ -1,10 +1,14 @@
 import random
 def get_choices():
-    player_choice = input("Enter a choice: ")
+    player_choice = input(f"Hello! You are going to test you skill in the most skill-based game of the humanity. Enter a choice (rock, paper, scissors): ")
     options = ["rock", "paper", "scissors"]
-    computer_choice = random.choice(options)
-    choices_dict = {"player": player_choice, "computer": computer_choice}
-    return choices_dict
+    try:
+        computer_choice = random.choice(options)
+        choices_dict = {"player": player_choice, "computer": computer_choice}
+        if player_choice in options:
+            return choices_dict
+    except:
+        print("Invalid input. Please try again.")
 
 def check_win(player, computer):
     print(f"You chose {player}. Computer chose {computer}.")
@@ -27,6 +31,9 @@ def check_win(player, computer):
             return "Scissors beats paper. You win!"
 
 choices = get_choices()
-result = check_win(choices["player"],choices["computer"])
-print(result)
-print("Thank you for playing.")
+try:
+    result = check_win(choices["player"],choices["computer"])
+    print(result)
+    print("Thank you for playing.")
+except TypeError:
+    print("Wrong input. Please choose from: rock, paper, scissors.")
