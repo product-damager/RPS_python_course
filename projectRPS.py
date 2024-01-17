@@ -1,6 +1,6 @@
 import random
 def get_choices():
-    player_choice = input(f"Hello! You are going to test you skill in the most skill-based game of the humanity. Enter a choice (rock, paper, scissors): ")
+    player_choice = input(f"Hello! You are going to test you skill in the most skill-based game of the humanity.\nEnter a choice (rock, paper, scissors): ")
     options = ["rock", "paper", "scissors"]
     try:
         computer_choice = random.choice(options)
